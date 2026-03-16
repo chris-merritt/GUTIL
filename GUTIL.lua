@@ -71,7 +71,9 @@ end
 ---@return number? qualityID
 ---@return boolean? simplified
 function GUTIL:GetQualityIDFromLink(itemLink)
-  
+    if not itemLink then
+        return
+    end  
   local simplified = string.find(itemLink, "Quality%-12%-Tier")
   local qualityID
   if simplified then
